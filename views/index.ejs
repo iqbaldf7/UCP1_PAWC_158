@@ -1,0 +1,21 @@
+<h2>Daftar Barang Thrift</h2>
+<a href="/add" class="btn">Tambah Barang</a>
+
+<div class="container">
+    <div class="item-grid">
+        <% thriftItems.forEach((item, index) => { %>
+            <div class="item-card">
+                <div class="item-info">
+                    <strong><%= item.name %></strong>
+                    <p>Rp<%= item.price %></p>
+                </div>
+                <div class="item-actions">
+                    <a href="/edit/<%= index %>" class="btn-edit">Edit</a>
+                    <form action="/delete/<%= index %>" method="POST" style="display:inline;">
+                        <button type="submit" class="btn-delete">Hapus</button>
+                    </form>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
